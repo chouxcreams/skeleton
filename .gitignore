@@ -1,0 +1,4 @@
+.vscode/
+.fleet/
+*.code-workspace
+.DS_Store
