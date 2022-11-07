@@ -8,19 +8,40 @@ servers: []
 paths:
   /tasks:
     post:
-      summary: Create a Task
+      summary: タスクの新規作成
       tags: []
-      responses: {}
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../models/task.yaml
+              examples:
+                example-1:
+                  value:
+                    taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
+                    title: string
+                    description: string
+                    status: todo
+        '400':
+          description: Bad Request
       operationId: post-tasks
       requestBody:
         content:
           application/json:
             schema:
               $ref: ../models/task.yaml
-            examples: {}
+            examples:
+              example-1:
+                value:
+                  taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
+                  title: string
+                  description: string
+                  status: todo
       security: []
     get:
-      summary: Get task list
+      summary: タスク一覧
       tags: []
       responses:
         '200':
@@ -40,6 +61,7 @@ paths:
                       status: todo
       operationId: get-tasks
       security: []
+      description: ''
 components:
   schemas: {}
   securitySchemes: {}
