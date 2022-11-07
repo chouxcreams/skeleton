@@ -2,7 +2,6 @@ name: yamlfmt
 on:
   pull_request:
   push:
-    branches: master
   jobs:
     lint:
       runs-on: ubuntu-20.04
