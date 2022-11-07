@@ -1,7 +1,6 @@
 name: Open API
 
-on:
-  - push
+on: push
 
 defaults:
   run:
@@ -12,12 +11,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - run: pwd
-      - run: echo ${{ env.MODULE_NAME }}
-
       - uses: actions/setup-node@v3
         with:
           node-version-file: 'openapi/package.json'
+          cache: npm
 
       - run: npm ci
       - run: npm run lint
