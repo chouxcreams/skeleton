@@ -3,9 +3,12 @@ name: Open API
 on:
   - push
 
+env:
+  MODULE_NAME: "openapi"
+
 defaults:
   run:
-    working-directory: openapi
+    working-directory: ${{ env.MODULE_NAME }}
     
 jobs:
   lint:
@@ -13,11 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: pwd
-      - run: echo ${{ github.workspace }}
+      - run: echo ${{ env.MODULE_NAME }}
 
       - uses: actions/setup-node@v3
         with:
-          node-version-file: 'package.json'
+          node-version-file: '${{ env.MODULE_NAME }}/package.json'
 
       - run: npm ci
       - run: npm run lint
