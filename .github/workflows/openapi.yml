@@ -19,3 +19,5 @@ jobs:
           cache-dependency-path: 'openapi/package-lock.json'
       - run: npm ci
       - run: npm run lint
+      - run: npm run build
+      - run: git diff --exit-code --quiet
