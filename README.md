@@ -8,3 +8,4 @@ https://chouxcreams.github.io/skeleton
 ## Requirement
 - node
 - [volta](https://github.com/volta-cli/volta)
+- [yamlfmt](https://github.com/google/yamlfmt)
