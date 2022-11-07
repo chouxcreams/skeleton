@@ -1,0 +1,15 @@
+name: yamlfmt
+on:
+  pull_request:
+  push:
+    branches: master
+  jobs:
+    lint:
+      runs-on: ubuntu-20.04
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-go@v3
+          with:
+            go-version: ^1.17
+        - run: go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+        - run: yamlfmt -lint
