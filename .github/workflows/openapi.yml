@@ -1,11 +1,8 @@
 name: Open API
-
 on: push
-
 defaults:
   run:
     working-directory: openapi
-
 jobs:
   lint:
     runs-on: ubuntu-20.04
@@ -16,6 +13,5 @@ jobs:
           node-version-file: 'openapi/package.json'
           cache: npm
           cache-dependency-path: 'openapi/package-lock.json'
-
       - run: npm ci
       - run: npm run lint

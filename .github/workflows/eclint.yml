@@ -1,10 +1,8 @@
 name: eclint
-
 on:
   pull_request:
   push:
-      branches: master
-
+    branches: master
 jobs:
   lint:
     runs-on: ubuntu-20.04
@@ -14,6 +12,5 @@ jobs:
         with:
           node-version-file: 'package.json'
           cache: npm
-
       - run: npm ci
       - run: npm run lint

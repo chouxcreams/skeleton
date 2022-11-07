@@ -1,6 +1,5 @@
 apis:
   skeleton:
     root: ./reference/skeleton.yaml
-
 rules:
   no-empty-servers: warn
