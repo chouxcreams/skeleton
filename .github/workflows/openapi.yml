@@ -15,6 +15,7 @@ jobs:
         with:
           node-version-file: 'openapi/package.json'
           cache: npm
+          cache-dependency-path: 'openapi/package-lock.json'
 
       - run: npm ci
       - run: npm run lint
