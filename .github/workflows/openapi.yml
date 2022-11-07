@@ -15,7 +15,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version-file: 'package.json'
+          node-version-file: '${{ github.GITHUB_WORKSPACE }}/package.json'
 
       - run: npm ci
       - run: npm run lint
