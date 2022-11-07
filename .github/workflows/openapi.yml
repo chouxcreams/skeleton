@@ -5,7 +5,7 @@ on: push
 defaults:
   run:
     working-directory: openapi
-    
+
 jobs:
   lint:
     runs-on: ubuntu-20.04
