@@ -5,7 +5,7 @@ on:
 
 defaults:
   run:
-    working-directory: openapi
+    working-directory: ./openapi
     
 jobs:
   lint:
