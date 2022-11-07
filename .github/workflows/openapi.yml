@@ -4,7 +4,7 @@ on:
   - push
 
 env:
-  MODULE_NAME: "openapi"
+  MODULE_NAME: openapi
 
 defaults:
   run:
