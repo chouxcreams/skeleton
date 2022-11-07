@@ -3,12 +3,9 @@ name: Open API
 on:
   - push
 
-env:
-  MODULE_NAME: openapi
-
 defaults:
   run:
-    working-directory: ${{ env.MODULE_NAME }}
+    working-directory: openapi
     
 jobs:
   lint:
@@ -20,7 +17,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version-file: '${{ env.MODULE_NAME }}/package.json'
+          node-version-file: 'openapi/package.json'
 
       - run: npm ci
       - run: npm run lint
