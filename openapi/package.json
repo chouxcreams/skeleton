@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "redocly preview-docs reference/skeleton.yaml",
-    "build": "redocly build-docs reference/skeleton.yaml --output ../docs/redoc.html"
+    "start": "redocly preview-docs",
+    "build": "redocly build-docs --output ../docs/redoc.html",
+    "lint": "redocly lint",
+    "format": "redocly lint --format"
   },
   "author": "chouxcreams",
   "license": "MIT",

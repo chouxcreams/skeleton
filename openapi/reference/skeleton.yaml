@@ -17,11 +17,8 @@ paths:
           application/json:
             schema:
               $ref: ../models/task.yaml
-            examples:
-              example-1:
-                value:
-                  title: string
-                  description: string
+            examples: {}
+      security: []
     get:
       summary: Get task list
       tags: []
@@ -42,5 +39,7 @@ paths:
                       description: string
                       status: todo
       operationId: get-tasks
+      security: []
 components:
   schemas: {}
+  securitySchemes: {}
