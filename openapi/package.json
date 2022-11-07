@@ -5,6 +5,7 @@
   "scripts": {
     "start": "redocly preview-docs",
     "build": "redocly build-docs --output ../docs/redoc.html",
+    "postbuild": "cd .. && npm run format",
     "lint": "redocly lint",
     "format": "redocly lint --format"
   },
