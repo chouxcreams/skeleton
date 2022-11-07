@@ -1,0 +1,46 @@
+openapi: 3.1.0
+x-stoplight:
+  id: yqx6v6cho9a2e
+info:
+  title: skeleton
+  version: '1.0'
+servers: []
+paths:
+  /tasks:
+    post:
+      summary: Create a Task
+      tags: []
+      responses: {}
+      operationId: post-tasks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/task.yaml
+            examples:
+              example-1:
+                value:
+                  title: string
+                  description: string
+    get:
+      summary: Get task list
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/task.yaml
+              examples:
+                example-1:
+                  value:
+                    - taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
+                      title: string
+                      description: string
+                      status: todo
+      operationId: get-tasks
+components:
+  schemas: {}
