@@ -1,6 +1,6 @@
 # skeleton
 
-![eclint](https://github.com/chouxcreams/skeleton/actions/workflows/eclint.yml/badge.svg)
+![editorconfig](https://github.com/chouxcreams/skeleton/actions/workflows/editorconfig.yml/badge.svg)
 ![yamlfmt](https://github.com/chouxcreams/skeleton/actions/workflows/yamlfmt.yml/badge.svg)
 ![OpenAPI](https://github.com/chouxcreams/skeleton/actions/workflows/openapi.yml/badge.svg)
 
@@ -13,3 +13,4 @@
 - node
 - [volta](https://github.com/volta-cli/volta)
 - [yamlfmt](https://github.com/google/yamlfmt)
+- [editorconfig-checker](https://github.com/editorconfig-checker/editorconfig-checker#continuous-integration)
