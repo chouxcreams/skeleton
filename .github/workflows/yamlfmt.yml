@@ -1,5 +1,9 @@
 name: yamlfmt
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - '**.yml'
+
 jobs:
   lint:
     runs-on: ubuntu-20.04
