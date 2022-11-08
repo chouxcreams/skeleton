@@ -1,0 +1,12 @@
+name: Editorconfig-checker
+on: pull_request
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: ^1.17
+      - run: go install github.com/editorconfig-checker/editorconfig-checker/cmd/editorconfig-checker@latest
+      - run: editorconfig-checker
