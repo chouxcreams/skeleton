@@ -27,6 +27,10 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+[*.ecrc]
+indent_style = space
+indent_size = 2
+
 [*.{html,css,scss}]
 indent_style = space
 indent_size = 2
@@ -38,15 +42,3 @@ indent_size = 4
 [*.go]
 indent_style = tab
 indent_size = 4
-
-[*.{tex,bib}]
-indent_style = space
-indent_size = 2
-
-[*latexmkrc]
-indent_style = space
-indent_size = 2
-
-[*.sql]
-indent_style = space
-indent_size = 2
