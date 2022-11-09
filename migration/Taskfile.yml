@@ -21,7 +21,7 @@ tasks:
   fmt:
     summary: prisma schemaファイルのformat
     cmds:
-      - npx prisma migrate format
+      - npx prisma format {{.CLI_ARGS}}
   studio:
     summary: prisma studioの起動
     cmds:

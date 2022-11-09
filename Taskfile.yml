@@ -1,4 +1,8 @@
 version: "3"
+includes:
+  migration:
+    taskfile: ./migration
+    dir: ./migration
 tasks:
   init:
     summary: 開発環境の初期化
