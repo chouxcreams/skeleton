@@ -3,10 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "redocly preview-docs",
-    "build": "redocly build-docs --output ../docs/redoc.html",
-    "lint": "redocly lint",
-    "format": "redocly lint --format"
+    "start": "task serve"
   },
   "author": "chouxcreams",
   "license": "MIT",
