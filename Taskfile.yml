@@ -3,6 +3,9 @@ includes:
   migration:
     taskfile: ./migration
     dir: ./migration
+  openapi:
+    taskfile: ./openapi
+    dir: ./openapi
 tasks:
   init:
     summary: 開発環境の初期化

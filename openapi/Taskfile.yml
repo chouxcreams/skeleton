@@ -21,7 +21,7 @@ tasks:
   fmt:
     summary: OpenAPIファイルのformat
     cmds:
-      - npx redocly lint --format
+      - npx redocly lint --format {{.CLI_ARGS}}
   serve:
     summary: redoclyサーバー起動
     aliases: ["start"]
