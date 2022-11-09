@@ -11,11 +11,16 @@ datasource db {
 }
 
 model Task {
-  taskId      String   @id @db.Uuid
-  title       String   @db.VarChar(50)
-  description String?
-  completed   Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  taskId      String     @id @db.Uuid
+  title       String     @db.VarChar(50)
+  description String
+  status      TaskStatus @default(TODO)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
   versionNo   BigInt
+}
+
+enum TaskStatus {
+  TODO
+  DONE
 }
