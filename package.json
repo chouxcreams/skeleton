@@ -3,8 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "lint": "eclint check $(git ls-files)",
-    "format": "eclint fix $(git ls-files)",
     "prepare": "husky install"
   },
   "repository": {
