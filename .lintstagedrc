@@ -1,0 +1,4 @@
+{
+  ".yaml": "yamlfmt",
+  ".yml": "yamlfmt"
+}
