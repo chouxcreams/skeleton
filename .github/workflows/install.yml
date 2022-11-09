@@ -1,6 +1,6 @@
 name: install
 on:
-  pull_request:
+  push: master
 jobs:
   install:
     runs-on: macos-latest
