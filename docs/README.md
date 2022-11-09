@@ -1,6 +1,5 @@
-https://github.com/chouxcreams/skeleton のドキュメント
+# Docs
 
-![eclint](https://github.com/chouxcreams/skeleton/actions/workflows/eclint.yml/badge.svg)
-![OpenAPI](https://github.com/chouxcreams/skeleton/actions/workflows/openapi.yml/badge.svg)
+<https://github.com/chouxcreams/skeleton> のドキュメント
 
 - [API Document](redoc.html)
