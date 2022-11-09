@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "generate": "prisma migrate dev --create-only --skip-generate",
-    "migrate": "prisma migrate dev --skip-generate",
-    "format": "prisma migrate format",
     "start": "prisma studio"
   },
   "author": "chouxcreams",
