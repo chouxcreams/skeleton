@@ -1,4 +1,6 @@
 {
   ".yaml": "yamlfmt",
-  ".yml": "yamlfmt"
+  ".yml": "yamlfmt",
+  "migration/**/*.prisma": "task migration:fmt --",
+  "openapi/**/*.yaml": "task openapi:fmt --"
 }

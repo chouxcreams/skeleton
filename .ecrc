@@ -1,5 +1,6 @@
 {
   "Exclude": [
-    "migration/prisma/migrations"
+    "migration/prisma/migrations",
+    "docs/redoc.html"
   ]
 }

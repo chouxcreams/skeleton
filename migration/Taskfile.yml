@@ -1,0 +1,28 @@
+version: "3"
+tasks:
+  init:
+    summary: 開発環境の初期化
+    status:
+      - test -d node_modules
+    cmds:
+      - npm ci
+  generate:
+    summary: migrationファイルの生成
+    cmds:
+      - npx prisma migrate dev --create-only --skip-generate
+    sources:
+      - prisma/schema.prisma
+    generates:
+      - prisma/migrations/**
+  migrate:
+    summary: migrationの実行
+    cmds:
+      - npx prisma migrate dev --skip-generate
+  fmt:
+    summary: prisma schemaファイルのformat
+    cmds:
+      - npx prisma format {{.CLI_ARGS}}
+  studio:
+    summary: prisma studioの起動
+    cmds:
+      - npx prisma studio
