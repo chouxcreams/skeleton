@@ -1,2 +1,3 @@
 exclude:
   - openapi/**/*.yaml
+  - node_modules/**

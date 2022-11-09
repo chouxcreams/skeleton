@@ -1,0 +1,23 @@
+version: "3"
+tasks:
+  init:
+    summary: 開発環境の初期化
+    status:
+      - test -d node_modules
+      - test -d .husky/_
+    cmds:
+      - npm ci
+  up:
+    summary: 開発環境コンテナの立ち上げ
+    cmds:
+      - docker compose up -d
+  fmt:
+    summary: 各ファイルのフォーマット
+    cmds:
+      - yamlfmt
+  lint:
+    summary: 各ファイルのLint
+    cmds:
+      - yamlfmt -lint
+      - editorconfig-checker
+      - actionlint
