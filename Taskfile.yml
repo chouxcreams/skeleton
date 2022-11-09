@@ -9,11 +9,25 @@ includes:
 tasks:
   init:
     summary: 開発環境の初期化
+    deps: [install]
     status:
       - test -d node_modules
       - test -d .husky/_
     cmds:
       - npm ci
+  install:
+    summary: init前に必要なツールをinstallする
+    preconditions:
+      - go version  &> /dev/null
+      - volta --version &> /dev/null
+    status:
+      - editorconfig-checker -version &> /dev/null
+      - yamlfmt -h &> /dev/null
+      - actionlint -version &> /dev/null
+    cmds:
+      - go install github.com/editorconfig-checker/editorconfig-checker/cmd/editorconfig-checker@latest
+      - go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+      - go install github.com/rhysd/actionlint/cmd/actionlint@latest
   up:
     summary: 開発環境コンテナの立ち上げ
     cmds:
@@ -28,16 +42,3 @@ tasks:
       - yamlfmt -lint
       - editorconfig-checker
       - actionlint
-  install:
-    summary: init前に必要なツールをinstallする
-    preconditions:
-      - go version  &> /dev/null
-      - volta --version &> /dev/null
-    status:
-      - editorconfig-checker -version &> /dev/null
-      - yamlfmt -h &> /dev/null
-      - actionlint -version &> /dev/null
-    cmds:
-      - go install github.com/editorconfig-checker/editorconfig-checker/cmd/editorconfig-checker@latest
-      - go install github.com/google/yamlfmt/cmd/yamlfmt@latest
-      - go install github.com/rhysd/actionlint/cmd/actionlint@latest

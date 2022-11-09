@@ -2,7 +2,7 @@ name: install
 on:
   pull_request:
 jobs:
-  actionlint:
+  install:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -11,5 +11,4 @@ jobs:
           go-version: ^1.17
       - uses: volta-cli/action@v3
       - run: brew install go-task/tap/go-task
-      - run: task install
       - run: task init
