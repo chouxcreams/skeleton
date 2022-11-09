@@ -1,0 +1,29 @@
+version: "3"
+tasks:
+  init:
+    summary: 開発環境の初期化
+    status:
+      - test -d node_modules
+    cmds:
+      - npm ci
+  generate:
+    summary: redoclyドキュメントの生成
+    cmds:
+      - npx redocly build-docs --output ../docs/redoc.html
+    sources:
+      - ./*/*.yaml
+    generates:
+      - ../docs/redoc.html
+  lint:
+    summary: OpenAPIファイルのLint
+    cmds:
+      - npx redocly lint
+  fmt:
+    summary: OpenAPIファイルのformat
+    cmds:
+      - npx redocly lint --format
+  serve:
+    summary: redoclyサーバー起動
+    aliases: ["start"]
+    cmds:
+      - npx redocly preview-docs
