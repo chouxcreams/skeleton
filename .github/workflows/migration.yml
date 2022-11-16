@@ -8,10 +8,10 @@ defaults:
     working-directory: migration
 jobs:
   migrate:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     services:
       postgres:
-        image: postgres
+        image: postgres:15.1
         env:
           POSTGRES_ROOT_PASSWORD: root
           POSTGRES_DATABASE: ci
@@ -33,7 +33,7 @@ jobs:
         env:
           DATABASE_URL: "postgresql://actions:password@localhost:5432/ci"
   lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3

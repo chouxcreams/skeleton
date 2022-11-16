@@ -1,7 +1,8 @@
 name: install
 on:
   push:
-    branches: master
+    branches:
+      - master
 jobs:
   install:
     runs-on: macos-latest
