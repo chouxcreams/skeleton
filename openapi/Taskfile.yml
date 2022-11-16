@@ -23,11 +23,6 @@ tasks:
     summary: OpenAPIファイルのLint
     cmds:
       - npx redocly lint
-  format:
-    summary: OpenAPIファイルのformat
-    aliases: ["fmt"]
-    cmds:
-      - npx redocly lint --format {{.CLI_ARGS}}
   show:
     summary: redoclyサーバー起動
     cmds:
