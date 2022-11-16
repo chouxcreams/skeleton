@@ -1,0 +1,46 @@
+name: Prisma Migrate
+on:
+  pull_request:
+    paths:
+      - "migration/prisma/**"
+defaults:
+  run:
+    working-directory: migration
+jobs:
+  migrate:
+    runs-on: ubuntu-20.04
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_ROOT_PASSWORD: root
+          POSTGRES_DATABASE: ci
+          POSTGRES_USER: actions
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'migration/package.json'
+          cache: npm
+          cache-dependency-path: 'migration/package-lock.json'
+      - run: npm ci
+      - run: npx prisma migrate dev --skip-generate
+        env:
+          DATABASE_URL: "postgresql://actions:password@localhost:5432/ci"
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: 'migration/package.json'
+          cache: npm
+          cache-dependency-path: 'migration/package-lock.json'
+      - run: npx prisma format
+      - name: prisma formatがかかっていないとエラー
+        run: test -z "$(git status -s)"

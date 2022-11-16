@@ -7,6 +7,10 @@
   },
   "author": "chouxcreams",
   "license": "MIT",
+  "volta": {
+    "node": "19.0.1",
+    "npm": "8.19.2"
+  },
   "dependencies": {
     "@prisma/client": "^4.6.0",
     "prisma": "^4.6.0"
