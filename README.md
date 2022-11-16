@@ -5,6 +5,7 @@
 ![yamlfmt](https://github.com/chouxcreams/skeleton/actions/workflows/yamlfmt.yml/badge.svg)
 ![actionlint](https://github.com/chouxcreams/skeleton/actions/workflows/actionlint.yml/badge.svg)
 ![OpenAPI](https://github.com/chouxcreams/skeleton/actions/workflows/openapi.yml/badge.svg)
+![PrismaMigrate](https://github.com/chouxcreams/skeleton/actions/workflows/migration.yml/badge.svg)
 
 ## Installation
 
