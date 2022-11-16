@@ -8,6 +8,7 @@ tasks:
       - npm ci
   generate:
     summary: redoclyドキュメントの生成
+    aliases: ["gen"]
     cmds:
       - npx redocly build-docs --output ../docs/redoc.html
     sources:
@@ -18,8 +19,9 @@ tasks:
     summary: OpenAPIファイルのLint
     cmds:
       - npx redocly lint
-  fmt:
+  format:
     summary: OpenAPIファイルのformat
+    aliases: ["fmt"]
     cmds:
       - npx redocly lint --format {{.CLI_ARGS}}
   serve:

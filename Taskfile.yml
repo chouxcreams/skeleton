@@ -32,8 +32,9 @@ tasks:
     summary: 開発環境コンテナの立ち上げ
     cmds:
       - docker compose up -d
-  fmt:
+  format:
     summary: 各ファイルのフォーマット
+    aliases: ["fmt"]
     cmds:
       - yamlfmt
   lint:

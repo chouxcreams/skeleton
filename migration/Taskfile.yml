@@ -8,6 +8,7 @@ tasks:
       - npm ci
   generate:
     summary: migrationファイルの生成
+    aliases: ["fmt"]
     cmds:
       - npx prisma migrate dev --create-only --skip-generate
     sources:
@@ -18,8 +19,9 @@ tasks:
     summary: migrationの実行
     cmds:
       - npx prisma migrate dev --skip-generate
-  fmt:
+  format:
     summary: prisma schemaファイルのformat
+    aliases: ["fmt"]
     cmds:
       - npx prisma format {{.CLI_ARGS}}
   studio:
