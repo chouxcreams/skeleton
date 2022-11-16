@@ -5,7 +5,11 @@ tasks:
     status:
       - test -d node_modules
     cmds:
-      - npm ci
+      - task: npm-ci
+  update:
+    summary: 開発環境の更新
+    cmds:
+      - task: npm-ci
   generate:
     summary: redoclyドキュメントの生成
     aliases: ["gen"]
@@ -24,8 +28,14 @@ tasks:
     aliases: ["fmt"]
     cmds:
       - npx redocly lint --format {{.CLI_ARGS}}
-  serve:
+  show:
     summary: redoclyサーバー起動
-    aliases: ["start"]
     cmds:
       - npx redocly preview-docs
+  npm-ci:
+    summary: npm ci
+    sources:
+      - package.json
+      - package-lock.json
+    cmds:
+      - npm ci
