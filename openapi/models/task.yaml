@@ -1,8 +1,6 @@
 title: task
-x-stoplight:
-  id: 9s5bm7yvd8v5z
 type: object
-examples:
+example:
   - taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
     title: string
     description: string

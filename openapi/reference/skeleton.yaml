@@ -1,6 +1,4 @@
-openapi: 3.1.0
-x-stoplight:
-  id: yqx6v6cho9a2e
+openapi: 3.0.0
 info:
   title: skeleton
   version: '1.0'
