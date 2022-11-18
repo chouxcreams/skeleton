@@ -14,7 +14,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/task.yaml
+                $ref: '#/components/schemas/task'
               examples:
                 example-1:
                   value:
@@ -29,7 +29,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/task.yaml
+              $ref: '#/components/schemas/task'
             examples:
               example-1:
                 value:
@@ -50,7 +50,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../models/task.yaml
+                  $ref: '#/components/schemas/task'
               examples:
                 example-1:
                   value:
@@ -62,5 +62,33 @@ paths:
       security: []
       description: ''
 components:
-  schemas: {}
+  schemas:
+    task:
+      title: task
+      type: object
+      example:
+        - taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
+          title: string
+          description: string
+          status: todo
+      properties:
+        taskId:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum:
+            - todo
+            - done
+          readOnly: true
+      required:
+        - taskId
+        - title
+        - description
+        - status
   securitySchemes: {}
