@@ -1,5 +1,5 @@
 apis:
   skeleton:
-    root: ./reference/skeleton.yaml
+    root: bundled.yml
 rules:
   no-empty-servers: warn
