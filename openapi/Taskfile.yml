@@ -42,3 +42,13 @@ tasks:
       - package-lock.json
     cmds:
       - npm ci
+  generate-backend:
+    summary: backendの生成
+    sources:
+      - bundled.yml
+    generates:
+      - ../backend/openapi/types.gen.go
+      - ../backend/openapi/server.gen.go
+    cmds:
+      - oapi-codegen -generate types -package openapi  bundled.yml > ../backend/openapi/types.gen.go
+      - oapi-codegen -generate server -package openapi  bundled.yml > ../backend/openapi/server.gen.go
