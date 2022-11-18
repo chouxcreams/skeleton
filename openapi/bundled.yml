@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  title: skeleton
+  version: '1.0'
+servers: []
+paths:
+  /tasks:
+    post:
+      summary: タスクの新規作成
+      tags: []
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+              examples:
+                example-1:
+                  value:
+                    taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
+                    title: string
+                    description: string
+                    status: todo
+        '400':
+          description: Bad Request
+      operationId: post-tasks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/task'
+            examples:
+              example-1:
+                value:
+                  taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
+                  title: string
+                  description: string
+                  status: todo
+      security: []
+      description: 新規のタスクを追加する
+    get:
+      summary: タスク一覧
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/task'
+              examples:
+                example-1:
+                  value:
+                    - taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
+                      title: string
+                      description: string
+                      status: todo
+      operationId: get-tasks
+      security: []
+      description: ''
+components:
+  schemas:
+    task:
+      title: task
+      type: object
+      example:
+        - taskId: e6e9d88a-9b63-468a-aec3-b7a11de27af8
+          title: string
+          description: string
+          status: todo
+      properties:
+        taskId:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum:
+            - todo
+            - done
+          readOnly: true
+      required:
+        - taskId
+        - title
+        - description
+        - status
+  securitySchemes: {}
